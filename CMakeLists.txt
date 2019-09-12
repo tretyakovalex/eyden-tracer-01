@@ -12,7 +12,7 @@ source_group("Include" FILES ${INCLUDE})
 source_group("" FILES ${INCLUDE} ${SOURCES} ${HEADERS}) 
 source_group("Source Files" FILES "src/main.cpp") 
 source_group("Source Files\\camera" FILES "src/ICamera.h" "src/CameraPerspective.h")
-source_group("Source Files\\primitives" FILES "src/Prim.h" "src/Sphere.h" "src/Plane.h" "src/Triangle.h")
+source_group("Source Files\\primitives" FILES "src/Prim.h" "src/PrimSphere.h" "src/PrimPlane.h" "src/PrimTriangle.h")
 source_group("Source Files\\utilities" FILES "src/ray.h")
 
 # OpenCV package
