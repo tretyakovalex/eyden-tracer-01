@@ -35,3 +35,4 @@ pos = (−8, 3, 8), dir = (1, −.1, −1), up = (0, 1, 0), angle = 45°
 pos = (−8, 3, 8), dir = (1, −.1, −1), up = (1, 1, 0), angle = 45°
 
 If your ray tracer works as expected, the first resulting image should look like this:
+![perspective1.jpg](https://github.com/Jacobs-University/eyden-tracer-01/blob/master/doc/perspective1.jpg)
