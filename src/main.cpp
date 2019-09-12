@@ -37,8 +37,9 @@ Mat RenderFrame(ICamera& camera)
 			
 			img.at<Vec3f>(y, x) = col; // store pixel color
 		}
+	
+	img.convertTo(img, CV_8UC3, 255);
 	return img;
-
 }
 
 int main(int argc, char* argv[])
