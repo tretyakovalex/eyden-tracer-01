@@ -2,12 +2,16 @@
 // Written by Sergey Kosov in 2005 for Rendering Competition
 #pragma once
 
-#include "Prim.h"
+#include "IPrim.h"
+#include "ray.h"
 
+// ================================ Infinite Plane Primitive Class ================================
 /**
- * @brief The Plane Geaometrical Primitive class
- */
-class CPrimPlane : public CPrim
+	* @brief The Plane Geometrical Primitive class
+	* @ingroup modulePrimitive
+	* @author Sergey G. Kosov, sergey.kosov@project-10.de
+	*/
+class CPrimPlane : public IPrim
 {
 public:
 	/**
@@ -15,8 +19,8 @@ public:
 	 * @param origin Point on the plane
 	 * @param normal Normal to the plane
 	 */
-	CPrimPlane(Vec3f origin, Vec3f normal)
-		: CPrim()
+	CPrimPlane(const Vec3f& origin, const Vec3f& normal)
+		: IPrim()
 		, m_normal(normal)
 		, m_origin(origin)
 	{
@@ -24,10 +28,10 @@ public:
 	}
 	virtual ~CPrimPlane(void) = default;
 
-	virtual bool Intersect(Ray& ray) override
+	virtual bool intersect(Ray& ray) const override
 	{
 		// --- PUT YOUR CODE HERE ---
-		return true;
+		return false;
 	}
 	
 	

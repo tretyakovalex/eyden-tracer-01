@@ -11,8 +11,8 @@ file(GLOB HEADERS "src/*.h")
 source_group("Include" FILES ${INCLUDE})
 source_group("" FILES ${INCLUDE} ${SOURCES} ${HEADERS}) 
 source_group("Source Files" FILES "src/main.cpp") 
-source_group("Source Files\\camera" FILES "src/ICamera.h" "src/CameraPerspective.h")
-source_group("Source Files\\primitives" FILES "src/Prim.h" "src/PrimSphere.h" "src/PrimPlane.h" "src/PrimTriangle.h")
+source_group("Source Files\\camera" FILES "src/ICamera.h" "src/CameraPerspective.h" "src/CameraOrthographic.h")
+source_group("Source Files\\primitives" FILES "src/IPrim.h" "src/PrimSphere.h" "src/PrimPlane.h" "src/PrimTriangle.h" "src/PrimDisc.h")
 source_group("Source Files\\utilities" FILES "src/ray.h")
 
 # OpenCV package

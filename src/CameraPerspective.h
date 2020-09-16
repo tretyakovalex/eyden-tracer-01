@@ -3,22 +3,26 @@
 #pragma once
 
 #include "ICamera.h"
+#include "ray.h"
 
+// ================================ Perspective Camera Class ================================
 /**
  * @brief Perspective Camera class
+ * @ingroup moduleCamera
+ * @author Sergey G. Kosov, sergey.kosov@project-10.de
  */
 class CCameraPerspective : public ICamera
 {
 public:
 	/**
 	 * @brief Constructor
+	 * @param resolution The image resolution in pixels
 	 * @param pos Camera origin (center of projection)
-	 * @param dir Camera viewing direction
-	 * @param up Up-vector
-	 * @param angle (Vertical) full opening angle of the viewing frustum (in degrees)
-	 * @param resolution The image resolution
+	 * @param dir Normalized camera viewing direction
+	 * @param up Normalized camera up-vector
+	 * @param angle (Vertical) full opening angle of the viewing frustum in degrees
 	 */
-	CCameraPerspective(Vec3f pos, Vec3f dir, Vec3f up, float angle, Size resolution)
+	CCameraPerspective(Size resolution, const Vec3f& pos, const Vec3f& dir, const Vec3f& up, float angle)
 		: ICamera(resolution)
 		, m_pos(pos)
 		, m_dir(dir)
@@ -28,24 +32,22 @@ public:
 	}
 	virtual ~CCameraPerspective(void) = default;
 
-	virtual bool InitRay(float x, float y, Ray& ray) override
+	virtual void InitRay(Ray& ray, int x, int y) override
 	{
 		// --- PUT YOUR CODE HERE ---
-		return true;
 	}
 
 
 private:
 	// input values
-	Vec3f m_pos;
-	Vec3f m_dir;
-	Vec3f m_up;
+	Vec3f m_pos;			///< Camera origin (center of projection)
+	Vec3f m_dir;			///< Camera viewing direction
+	Vec3f m_up;				///< Camera up-vector
+	float m_focus;			///< The focal length
 
 	// preprocessed values
-	float m_focus;
-	Vec3f m_xAxis;
-	Vec3f m_yAxis;
-	Vec3f m_zAxis;
-	float m_aspect;
+	Vec3f m_xAxis;			///< Camera x-axis in WCS
+	Vec3f m_yAxis;			///< Camera y-axis in WCS
+	Vec3f m_zAxis;			///< Camera z-axis in WCS
 };
 
