@@ -3,5 +3,5 @@
 #include "ICamera.h"
 #include "ray.h"
 
-// --- IMPLENET class CCameraOrthographic ---
+// --- IMPLENET class CCameraEnvironmental ---
 // --- PUT YOUR CODE HERE ---

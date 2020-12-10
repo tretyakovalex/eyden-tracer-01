@@ -1,5 +1,5 @@
 #include "CameraPerspective.h"
-#include "CameraOrthographic.h"
+#include "CameraEnvironmental.h"
 
 #include "PrimSphere.h"
 #include "PrimPlane.h"
@@ -61,7 +61,7 @@ int main(int argc, char* argv[])
 	Mat img3 = RenderFrame(cam3);
 	imwrite("perspective3.jpg", img3);
 
-	// Add orthigraphic camera here as cam4
+	// AddeEnvironmental camera here as cam4
 	// Mat img4 = RenderFrame(cam4);
 	// imwrite("orthographic4.jpg", img4);
 
