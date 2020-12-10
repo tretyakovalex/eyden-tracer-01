@@ -1,5 +1,5 @@
-# Practical Assignment 1
-**Deadline**: 01.10.2020
+# Make-Up Practical Assignment 1
+**Deadline**: 14.12.2020
 
 Please put your name here:  
 **Name**: .......
@@ -60,11 +60,18 @@ You can derive this class from ```CPrimPlane```, or directly from ```IPrim```. I
 Once implemented, create an instance of ```CPrimDisc``` class in main.cpp and replace sphere s1 with the disc. Render it with magenta color. 
 
 ## Problem 3 (50 Points)
-### Orthographic Camera
-Implement the ```CCameraOrthographic``` class.
+### Environmental Camera
+Implement the 360° ```CCameraEnvironmental``` class.
 
-You can derive ```CCameraOrthographic``` from ```ICamera``` class. Implement ray generation according to the lecture slides.
+You can derive ```CCameraEnvironmental``` from ```ICamera``` class. Implement ray generation according to the lecture slides.
 
-Once implemented, create an instance of ```CCameraOrthographic``` class in main.cpp as cam4. You can place it in the same position and orient it in the same direction as cam3. Render orthographic4.jpg image and compare it to perspective3.jpg. Make orthographic4.jpg look similar to perspective3.jpg by adjusting the parameters of cam4 camera.
-> Hint: think about the size of the orthographic camera sensor
+Once implemented, create an instance of ```CCameraEnvironmental``` class in **main.cpp** as cam4. You can place it in the same position as cam3. Render environmental4.jpg image and compare it to perspective3.jpg.
+
+## Submission
+Please submit the assignment by making a pull request.
+**Important** : Please make sure that
+- No _extra files_ are submitted (except those, which were mentioned in the assignment)
+- The changes were made _only_ in those files where you were asked to write your code
+- The Continiouse Integration system (appVeyor) can build the submitted code
+- The rendered images are also submitted in the folder "renders" 
 
