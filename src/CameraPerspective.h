@@ -29,12 +29,31 @@ public:
 		, m_up(up)
 	{
 		// --- PUT YOUR CODE HERE ---
+        m_zAxis = m_dir;
+        m_xAxis = normalize(m_zAxis.cross(up));
+        m_yAxis = normalize(m_zAxis.cross(m_xAxis));
+        m_focus = 1.0f / tan((Pif * angle) / 360);
 	}
 	virtual ~CCameraPerspective(void) = default;
 
 	virtual void InitRay(Ray& ray, int x, int y) override
 	{
 		// --- PUT YOUR CODE HERE ---
+        Size resolution = getResolution();
+        
+        float ndcx = static_cast<float>(x) / resolution.width;
+        float ndcy = static_cast<float>(y) / resolution.height;
+        
+        float sscx = 2 * ndcx - 1;
+        float sscy = 2 * ndcy - 1;
+        
+        Vec3f zAxis = m_dir;
+        Vec3f xAxis = normalize(zAxis.cross(m_up));
+        Vec3f yAxis = normalize(zAxis.cross(xAxis));
+        
+        ray.org = m_pos;
+        ray.dir = normalize(getAspectRatio() * sscx * xAxis + sscy * yAxis + m_focus * zAxis);
+        ray.t = std::numeric_limits<float>::infinity();
 	}
 
 
